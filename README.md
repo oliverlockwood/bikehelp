@@ -1,8 +1,8 @@
 BikeHelp
 ========
 
-BikeHelp Android app
+An Android app to help cyclists struck with mechanicals while out and about
 
-Original idea: summer 2012 over lunch between Oliver Lockwood & Mudit Matanhelia
-Original sketch implementation: November 2012
-Proper implementation: 2014
+-  Summer 2012: original idea developed over lunch between Oliver Lockwood & Mudit Matanhelia
+-  November 2012: original sketch implementation
+-  2014: v1.0 developed and released (hopefully)
