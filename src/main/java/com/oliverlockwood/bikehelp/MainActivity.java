@@ -1,22 +1,48 @@
 package com.oliverlockwood.bikehelp;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
+
+    private static final LatLng LONDON = new LatLng(51.507354, -0.127730);
+
+    private GoogleMap mMap;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hello_layout);
+        setContentView(R.layout.main_layout);
+        setUpMapIfNeeded();
+
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        TextView textView = (TextView) findViewById(R.id.text_view);
-        textView.setText("Hello world!");
+    protected void onResume() {
+        super.onResume();
+        setUpMapIfNeeded();
     }
 
+    private void setUpMapIfNeeded() {
+        if (mMap != null) {
+            return;
+        }
+        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+        if (mMap == null) {
+            return;
+        }
+
+        // Initialize map options. For example:
+        // mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LONDON, 12));
+        MarkerOptions markerOptions = new MarkerOptions().position(LONDON).visible(true).title("Marker 1");
+        mMap.addMarker(markerOptions);
+    }
 }
