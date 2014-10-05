@@ -20,6 +20,21 @@
             <version>4.1.1.4</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>support-v4</artifactId>
+            <version>r7</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.android.gms</groupId>
+            <artifactId>play-services</artifactId>
+            <version>5.2.08</version>
+            <type>aar</type>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -27,7 +42,8 @@
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-                <version>3.9.0-rc.1</version>
+                <!-- Can't go any higher due to https://code.google.com/p/maven-android-plugin/issues/detail?id=449 -->
+                <version>3.8.2</version>
                 <configuration>
                     <sdk>
                         <platform>19</platform>
