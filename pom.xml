@@ -20,6 +20,13 @@
             <version>4.1.1.4</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.android.maps</groupId>
+            <artifactId>maps</artifactId>
+            <version>19_r7</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
