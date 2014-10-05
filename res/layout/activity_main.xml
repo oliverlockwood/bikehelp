@@ -5,13 +5,13 @@
 
     <!-- Map view seems to need to be the first thing in here -->
 
-    <com.oliverlockwood.bikehelp.CustomMapView
+<!--    <com.oliverlockwood.bikehelp.CustomMapView
         android:id="@+id/mapView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:apiKey="0PfeyjpcY9y1B38KZ13CkJS5VsF0gxShv9zgw9Q"
         android:clickable="true"
-        android:enabled="true" />
+        android:enabled="true" />-->
 
     <!-- Title bar -->
 
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:background="@color/black"
         android:padding="3dp"
-        android:contentDescription="@string/descNone"
+        android:contentDescription="@string/blank"
         android:src="@drawable/ic_launcher" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_toRightOf="@+id/titleIcon"
         android:background="@color/black"
         android:gravity="center_vertical"
-        android:text="@string/Bike_Help"
+        android:text="@string/app_name_ext"
         android:textColor="@color/white"
         android:textSize="25sp" />
 
@@ -50,7 +50,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/buttonGps"
         android:background="@color/black"
-        android:contentDescription="@string/descNone"
+        android:contentDescription="@string/blank"
         android:ems="10" />
 
     <ImageView
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:contentDescription="@string/descNone"
+        android:contentDescription="@string/blank"
         android:padding="10dp"
         android:src="@drawable/gps1" />
 
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/descNone"
+        android:contentDescription="@string/blank"
         android:padding="10dp"
         android:src="@drawable/gps1" />
 
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:contentDescription="@string/descNone"
+        android:contentDescription="@string/blank"
         android:padding="10dp"
         android:src="@drawable/gps1" />
 

@@ -15,7 +15,7 @@
             android:textSize="14sp" />
        
        <ImageView android:id="@+id/image"
-             android:contentDescription="@string/descNone"
+             android:contentDescription="@string/blank"
              android:layout_width="fill_parent"
              android:minWidth="180dp"
              android:layout_height="5dp"
