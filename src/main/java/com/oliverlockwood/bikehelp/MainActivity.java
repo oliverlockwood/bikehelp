@@ -2,7 +2,6 @@ package com.oliverlockwood.bikehelp;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -11,8 +10,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends FragmentActivity {
 
+    /**
+     * Default map start location
+     */
     private static final LatLng LONDON = new LatLng(51.507354, -0.127730);
 
+    /**
+     * The map instance
+     */
     private GoogleMap mMap;
 
     @Override
@@ -20,7 +25,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         setUpMapIfNeeded();
-
     }
 
     @Override
@@ -29,6 +33,9 @@ public class MainActivity extends FragmentActivity {
         setUpMapIfNeeded();
     }
 
+    /**
+     * Set up the map, if it is not already done.
+     */
     private void setUpMapIfNeeded() {
         if (mMap != null) {
             return;
