@@ -1,14 +1,18 @@
 package com.oliverlockwood.bikehelp;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
 
     /**
      * Default map start location
@@ -33,6 +37,29 @@ public class MainActivity extends FragmentActivity {
         setUpMapIfNeeded();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                // TODO something
+                return true;
+            case R.id.action_compose:
+                // TODO something
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     /**
      * Set up the map, if it is not already done.
      */
@@ -40,7 +67,7 @@ public class MainActivity extends FragmentActivity {
         if (mMap != null) {
             return;
         }
-        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+        mMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
         if (mMap == null) {
             return;
         }
@@ -51,5 +78,8 @@ public class MainActivity extends FragmentActivity {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LONDON, 12));
         MarkerOptions markerOptions = new MarkerOptions().position(LONDON).visible(true).title("Marker 1");
         mMap.addMarker(markerOptions);
+
+        ActionBar actionBar = getActionBar();
+        //actionBar.
     }
 }
