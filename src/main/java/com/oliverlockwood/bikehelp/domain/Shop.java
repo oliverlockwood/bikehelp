@@ -1,6 +1,6 @@
 package com.oliverlockwood.bikehelp.domain;
 
-import java.net.URL;
+import java.net.URI;
 
 /**
  * Bike Shop domain object.
@@ -20,7 +20,7 @@ public class Shop {
     /**
      * Website address (if available).
      */
-    private final URL website;
+    private final URI website;
 
     /**
      * Phone number (if available).
@@ -47,7 +47,7 @@ public class Shop {
         return address;
     }
 
-    public URL getWebsite() {
+    public URI getWebsite() {
         return website;
     }
 
@@ -73,7 +73,7 @@ public class Shop {
         /**
          * @see Shop#website
          */
-        private URL website;
+        private URI website;
 
         /**
          * @see Shop#phone
@@ -108,7 +108,7 @@ public class Shop {
          * @param website website of the bike shop
          * @return this {@code Builder} for chaining
          */
-        public Builder website(URL website) {
+        public Builder website(URI website) {
             this.website = website;
             return this;
         }
