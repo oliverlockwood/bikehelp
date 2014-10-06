@@ -1,18 +1,18 @@
 package com.oliverlockwood.bikehelp;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     /**
      * Default map start location
@@ -67,7 +67,7 @@ public class MainActivity extends ActionBarActivity {
         if (mMap != null) {
             return;
         }
-        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+        mMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
         if (mMap == null) {
             return;
         }
@@ -79,6 +79,7 @@ public class MainActivity extends ActionBarActivity {
         MarkerOptions markerOptions = new MarkerOptions().position(LONDON).visible(true).title("Marker 1");
         mMap.addMarker(markerOptions);
 
-        //ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getActionBar();
+        //actionBar.
     }
 }
