@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * Bike Shop domain object.
  */
-public class BikeShop {
+public class Shop {
 
     /**
      * Name of the bike shop.
@@ -28,11 +28,11 @@ public class BikeShop {
     private final String phone;
 
     /**
-     * Create a {@code BikeShop} from a {@code Builder}
+     * Create a {@code Shop} from a {@code Builder}
      *
      * @param builder {@link Builder} from which to create the object
      */
-    private BikeShop(Builder builder) {
+    private Shop(Builder builder) {
         this.name = builder.name;
         this.address = builder.address;
         this.website = builder.website;
@@ -56,27 +56,27 @@ public class BikeShop {
     }
 
     /**
-     * Builder class for building {@link BikeShop} objects.
+     * Builder class for building {@link Shop} objects.
      */
     public static class Builder {
 
         /**
-         * @see BikeShop#name
+         * @see Shop#name
          */
         private String name;
 
         /**
-         * @see BikeShop#address
+         * @see Shop#address
          */
         private String address;
 
         /**
-         * @see BikeShop#website
+         * @see Shop#website
          */
         private URL website;
 
         /**
-         * @see BikeShop#phone
+         * @see Shop#phone
          */
         private String phone;
 
@@ -125,17 +125,17 @@ public class BikeShop {
         }
 
         /**
-         * Create a new {@code BikeShop}
+         * Create a new {@code Shop}
          *
-         * @return a {@link BikeShop} created from the properties of this builder.
+         * @return a {@link Shop} created from the properties of this builder.
          */
-        public BikeShop build() {
+        public Shop build() {
             validate();
-            return new BikeShop(this);
+            return new Shop(this);
         }
 
         /**
-         * Validate the integrity of the {@link BikeShop.Builder}
+         * Validate the integrity of the {@link Shop.Builder}
          */
         private void validate() {
             // TODO add validation in here
